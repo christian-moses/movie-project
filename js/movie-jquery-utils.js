@@ -8,7 +8,7 @@ function appendAllMovieData(movieArr){
 
 
 function getMovieCard(movieObj) {
-    let moviecard = $(`<div class="card"> </div>`)
+    let moviecard = $(`<div class="card col-md-2 mt-2"> </div>`)
 
     moviecard.append(`<div class="card-header title">(title) ${movieObj.title}</div>
 
