@@ -15,11 +15,16 @@ function getMovieData() {
 }
 
 
-window.onload = (event) => {
-	$("#loading")
-		.hide("slow")
-	getMovieData()
-}
+// window.onload = (event) => {
+// 	$("#loading")
+// 		.hide("slow")
+// 	getMovieData()
+// }
+setTimeout(
+$(window).on("load", function(){
+	$(".loader-wrapper").fadeOut('slow');
+	getMovieData();
+}), 20000);
 
 
 function addMovies() {

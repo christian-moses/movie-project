@@ -28,11 +28,11 @@ function getMovieCard(movieObj) {
 		<div class="actors">Actors:${movieObj.actors}</div>
 		<hr>
 		<label for="editrating">Add new rating</label>
-		<input type="text" id="editrating" class="editRating">
+		<input type="text" id="editrating" class="editRating form-control">
 		<label for="edittitle">Add new title</label>
-		<input type="text" id="edittitle" class="editTitle">
-		<button class="btn-primary" id="edit" onclick="editMovie(${movieObj.id})"> Edit</button>
-		<button class="btn-primary" id="delete" onclick="deleteMovie(${movieObj.id})"> Delete</button>
+		<input type="text" id="edittitle" class="editTitle form-control">
+		<button class="btn-primary form-control mt-2" id="edit" onclick="editMovie(${movieObj.id})"> Edit</button>
+		<button class="btn-primary form-control mt-2" id="delete" onclick="deleteMovie(${movieObj.id})"> Delete</button>
 	</div>`)
     return moviecard;
 }
