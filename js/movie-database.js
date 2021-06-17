@@ -1,8 +1,12 @@
+const url = 'https://leaf-lofty-vulture.glitch.me/movies'
+
+
 function getMovieData() {
 	fetch("https://leaf-lofty-vulture.glitch.me/movies")
 		.then(response => {
 			response.json()
 					.then(data => {
+						$(".movie-container").empty()
 						appendAllMovieData(data)
 						console.log(data)
 					})
@@ -19,7 +23,7 @@ window.onload = (event) => {
 
 
 function addMovies(){
-	const url = 'https://leaf-lofty-vulture.glitch.me/movies'
+
 	let movieRating = $('#rating')
 		.val()
 	let movieTitle = $('#title')
@@ -27,7 +31,10 @@ function addMovies(){
 
 	let newMovie = {
 		title: movieTitle,
-		rating: movieRating
+		rating: movieRating,
+		year: ,
+		genre: ,
+
 	}
 	const options = {
 		method: 'POST',
@@ -48,6 +55,28 @@ $('#submit')
 		addMovies()
 	})
 
+function editMovie(id){
+	let options = {
+		method: 'PATCH',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+		rating: $(`.movie-card[data-id=${id}] > .editRating`).val()
+		}),
+
+	}
+	fetch(url +`/${id}` , options)
+		.then(res => console.log(res))
+}
+
+function deleteMovie(id){
+	let options = {
+		method: 'DELETE',
+	}
+	fetch(url +`/${id}` , options)
+		.then(res => getMovieData())
+}
 
 
 
