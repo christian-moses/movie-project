@@ -21,10 +21,12 @@ function getMovieData() {
 // 	getMovieData()
 // }
 
-$(window).on("load", function(){
-	$(".loader-wrapper").fadeOut('slow');
-	getMovieData();
-});
+$(window)
+	.on("load", function () {
+		$(".loader-wrapper")
+			.fadeOut('slow');
+		getMovieData();
+	});
 
 
 function addMovies() {
@@ -75,36 +77,41 @@ $('#submit')
 	})
 
 function editMovie(id) {
-	let title;
-	let rating;
-	if(existing title is empty){
-		title = $('mvoieId').val()
-	} else {
-		title = $(`.movie-card[data-id=${id}] > .editTitle`)
-			.val()
-	}
+
+
 	let title = $(`.movie-card[data-id=${id}] > .editTitle`)
-		.val()
+		.val();
 
 	let rating = $(`.movie-card[data-id=${id}] > .editRating`)
 		.val()
 
+	let newMovie = {
+		title,
+		rating
+	}
+
+	let entries = Object.entries(newMovie)
+
+	let filteredEntries= entries.filter(([k,v]) =>
+		!!v
+	)
+
+	newMovie = Object.fromEntries(filteredEntries)
 
 	let options = {
 		method: 'PATCH',
 		headers: {
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify({
-			title: title,
-			rating: rating
-		}),
-
+		body: JSON.stringify(
+			newMovie
+		),
 	}
 
 
-	fetch(url + `/${id}`, options)
+	return fetch(url + `/${id}`, options)
 		.then(res => getMovieData())
+
 }
 
 function deleteMovie(id) {
