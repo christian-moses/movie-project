@@ -1,83 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Title</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-			  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-			  crossorigin="anonymous">
-		<link rel="stylesheet" href="css/movie-project.css">
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com">
-		<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
-	</head>
-	<body style="font-family: 'Orbitron', sans-serif;">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+        <link rel="stylesheet" href="css/movie-project.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    </head>
+    <body class="bg-dark" style="font-family: 'Orbitron', sans-serif;">
+        <div id="main">
+
+            <div class="loader-wrapper">
+                <span class="loader"><span class="loader-inner"></span></span>
+            </div>
 
 
-		<div class="loader-wrapper">
-			<span class="loader"><span class="loader-inner"></span></span>
-		</div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#top">Movies</a>
+                <a href="#">Showtimes</a>
+                <a href="#">Snackbar</a>
+                <a href="#add">Add movie</a>
+            </div>
+
+            <span onclick="openNav()"> <img
+                    src="https://www.creativefabrica.com/wp-content/uploads/2019/02/Monogram-CM-Logo-by-Greenlines-Studios.jpg"
+                    class="logo" style="height: 100px; width: 100px"></span>
 
 
-		<div class="container">
-			<h1 class="text-center text-danger">BlockBlister</h1>
-<!--			<h1 id="loading" class="text-center">Loading...</h1>-->
+            <div class="container">
+                <h1 class="text-center text-danger"><a name="top"> BlockBlister</a></h1>
+                <!--			<h1 id="loading" class="text-center">Loading...</h1>-->
 
-			<div class="movie-container row">
+                <div class="movie-container row">
 
-			</div>
-
-
-			<h2 class="text-center text-danger mt-5">Add a new Movie!</h2>
-
-			<div class="movie-form">
-				<form>
-					<div class="form-group row">
-						<div class="col-6">
-							<label for="title">Enter a Movie Title:</label>
-							<input class="form-control" type="text" id="title" name="title">
-						</div>
-						<div class="col-6">
-							<label for="rating">Rate the Movie:</label>
-							<input class="form-control" type="text" id="rating" name="rating">
-						</div>
-						<div class="col-6">
-							<label for="year">Enter year movie was made:</label>
-							<input class="form-control" type="text" id="year" name="title">
-						</div>
-						<div class="col-6">
-						<label for="genre">Add the genre:</label>
-						<input class="form-control" type="text" id="genre" name="rating">
-						</div>
-						<div class="col-6">
-							<label for="Director">Add a Director:</label>
-							<input class="form-control" type="text" id="director" name="rating">
-						</div>
-						<div class="col-6">
-							<label for="plot">Add the plot:</label>
-							<input class="form-control" type="text" id="plot" name="rating">
-						</div>
-						<div class="col-6">
-							<label for="actors">Add Actors:</label>
-							<input class="form-control" type="text" id="actors" name="rating">
-						</div>
-						<div class="col-6">
-						<label for="poster">Add a poster:</label>
-						<input class="form-control" type="text" id="poster" name="rating">
-						</div>
-						<button class="form-control btn-primary mt-2" id="submit" type="submit" >Submit</button>
-					</div>
-				</form>
-			</div>
-		</div>
+                </div>
 
 
+                <h2 class="text-center text-danger mt-5"><a name="add"> Add a new Movie! </a></h2>
 
-		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-			  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-			  crossorigin="anonymous">
-		<script src="js/movie-database.js"></script>
-		<script src="js/movie-jquery-utils.js"></script>
-	</body>
+                <div class="movie-form">
+                    <form>
+                        <div class="form-group row">
+                            <div class="col-6">
+                                <label for="title">Enter a Movie Title:</label>
+                                <input class="form-control" type="text" id="title" name="title">
+                            </div>
+                            <div class="col-6">
+                                <label for="rating">Rate the Movie:</label>
+                                <input class="form-control" type="text" id="rating" name="rating">
+                            </div>
+                            <div class="col-6">
+                                <label for="year">Enter year movie was made:</label>
+                                <input class="form-control" type="text" id="year" name="title">
+                            </div>
+                            <div class="col-6">
+                                <label for="genre">Add the genre:</label>
+                                <input class="form-control" type="text" id="genre" name="rating">
+                            </div>
+                            <div class="col-6">
+                                <label for="Director">Add a Director:</label>
+                                <input class="form-control" type="text" id="director" name="rating">
+                            </div>
+                            <div class="col-6">
+                                <label for="plot">Add the plot:</label>
+                                <input class="form-control" type="text" id="plot" name="rating">
+                            </div>
+                            <div class="col-6">
+                                <label for="actors">Add Actors:</label>
+                                <input class="form-control" type="text" id="actors" name="rating">
+                            </div>
+                            <div class="col-6">
+                                <label for="poster">Add a poster:</label>
+                                <input class="form-control" type="text" id="poster" name="rating">
+                            </div>
+                            <button class="form-control btn-primary mt-2" id="submit" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+              crossorigin="anonymous">
+        <script src="js/movie-database.js"></script>
+        <script src="js/movie-jquery-utils.js"></script>
+    </body>
 </html>
