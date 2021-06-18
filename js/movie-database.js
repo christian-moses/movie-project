@@ -75,19 +75,34 @@ $('#submit')
 	})
 
 function editMovie(id) {
+	let title;
+	let rating;
+	if(existing title is empty){
+		title = $('mvoieId').val()
+	} else {
+		title = $(`.movie-card[data-id=${id}] > .editTitle`)
+			.val()
+	}
+	let title = $(`.movie-card[data-id=${id}] > .editTitle`)
+		.val()
+
+	let rating = $(`.movie-card[data-id=${id}] > .editRating`)
+		.val()
+
+
 	let options = {
 		method: 'PATCH',
 		headers: {
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({
-			rating: $(`.movie-card[data-id=${id}] > .editRating`)
-				.val(),
-			title: $(`.movie-card[data-id=${id}] > .editTitle`)
-				.val()
+			title: title,
+			rating: rating
 		}),
 
 	}
+
+
 	fetch(url + `/${id}`, options)
 		.then(res => getMovieData())
 }

@@ -29,10 +29,10 @@ function getMovieCard(movieObj) {
         <hr>
 		<div class="plot">Plot: ${movieObj.plot}</div>
 		<hr>
-		<label for="editrating">Add new rating</label>
-		<input type="text" id="editrating" class="editRating form-control">
-		<label for="edittitle">Add new title</label>
-		<input type="text" id="edittitle" class="editTitle form-control">
+		<p>Add new rating</p>
+		<input type="text"  class="editRating form-control">
+		<p>Add new Title</p>
+		<input type="text" class="editTitle form-control">
 		<button class="btn-primary form-control mt-2" id="edit" onclick="editMovie(${movieObj.id})"> Edit</button>
 		<button class="btn-primary form-control mt-2" id="delete" onclick="deleteMovie(${movieObj.id})"> Delete</button>
 	</div>`)
