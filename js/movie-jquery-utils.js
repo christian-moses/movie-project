@@ -8,7 +8,7 @@ function appendAllMovieData(movieArr){
 
 
 function getMovieCard(movieObj) {
-    let moviecard = $(`<div class="card col-4 mt-2 p-0"> </div>`)
+    let moviecard = $(`<div class="card col-4 my-2" > </div>`)
 
     moviecard.append(`<div class="card-header title">${movieObj.title}</div>
 
@@ -18,14 +18,16 @@ function getMovieCard(movieObj) {
 		<div class="rating">Rating: ${movieObj.rating} </div>
 		<hr>
 		<div class="desc-container">
-			<div class="year">Year:${movieObj.year}</div>
+			<div class="year">Year: ${movieObj.year}</div>
 		</div>
 		<hr>
 		<div class="genre">Genre: ${movieObj.genre}</div>
 		<hr>
 		<div class="director">Director: ${movieObj.director}</div>
-		<div class="plot">Plot:${movieObj.plot}</div>
-		<div class="actors">Actors:${movieObj.actors}</div>
+		<hr>
+		<div class="actors">Actors: ${movieObj.actors}</div>
+        <hr>
+		<div class="plot">Plot: ${movieObj.plot}</div>
 		<hr>
 		<label for="editrating">Add new rating</label>
 		<input type="text" id="editrating" class="editRating form-control">
