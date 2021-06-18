@@ -20,11 +20,11 @@ function getMovieData() {
 // 		.hide("slow")
 // 	getMovieData()
 // }
-setTimeout(
+
 $(window).on("load", function(){
 	$(".loader-wrapper").fadeOut('slow');
 	getMovieData();
-}), 20000);
+});
 
 
 function addMovies() {
