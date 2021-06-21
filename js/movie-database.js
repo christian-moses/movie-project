@@ -15,12 +15,6 @@ function getMovieData() {
 }
 
 
-// window.onload = (event) => {
-// 	$("#loading")
-// 		.hide("slow")
-// 	getMovieData()
-// }
-
 $(window)
 	.on("load", function () {
 		$(".loader-wrapper")
