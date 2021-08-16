@@ -1,8 +1,8 @@
-const url = 'https://leaf-lofty-vulture.glitch.me/movies'
+const url = 'http://localhost:8080/movies'
 
 
 function getMovieData() {
-	fetch("https://leaf-lofty-vulture.glitch.me/movies")
+	fetch("http://localhost:8080/movies")
 		.then(response => {
 			response.json()
 					.then(data => {
@@ -45,18 +45,18 @@ function addMovies() {
 		title: movieTitle,
 		rating: movieRating,
 		year: movieYear,
+		poster: moviePoster,
 		genre: movieGenre,
+		actors: movieActors,
 		director: movieDirector,
 		plot: moviePlot,
-		actors: movieActors,
-		poster: moviePoster
 	}
 	const options = {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify(newMovie),
+		body: JSON.stringify([newMovie]),
 	}
 
 	fetch(url, options)
@@ -86,7 +86,7 @@ function editMovie(id) {
 
 	let entries = Object.entries(newMovie)
 
-	let filteredEntries= entries.filter(([k,v]) =>
+	let filteredEntries = entries.filter(([k, v]) =>
 		!!v
 	)
 
